@@ -1,17 +1,29 @@
 import React from 'react';
 
+import { Header } from './components/Header';
+import { Form } from './components/Form';
+
 import styles from './App.module.css';
 import './global.css';
+
+import { Lista } from './components/Lista';
 
 export function App(){
   return(
     <div>
 
-      <header className={styles.header}>
-        <img src="./assets/rocket.svg" alt="Logo" />
-        <h1>todo</h1>
-      </header>
+      <Header />
 
+      <main className={styles.main}>
+
+        {/* Campo do Input */}
+        <Form />
+
+        {/* Lista */}
+        <Lista />
+
+
+      </main>
       
 
     </div>

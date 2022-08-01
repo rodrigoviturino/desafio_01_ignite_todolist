@@ -6,6 +6,73 @@
 }
 
 .header{
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background-color: var(--gray-700);
   color: white;
+
 }
+
+.header img {
+  margin-right: 12px;
+  height: 40px;
+}
+
+.header h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+.to {
+  color: var(--blue);
+}
+
+.do {
+  color: var(--purple-dark);
+}
+
+/* MAIN */
+
+.main {
+  background-color: var(--background-dark);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main form {
+  margin-top: -1.6rem;
+  margin-bottom: 4rem;
+}
+
+.main form input{
+  background-color: var(--gray-500);
+  padding: 1rem;
+  margin-right: 8px;
+  border-radius: 8px;
+  color: var(--gray-300);
+  border: none;
+}
+
+.main form button {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* end Items */
+
+
+/* end Listagem */
+
+/* END MAIN */

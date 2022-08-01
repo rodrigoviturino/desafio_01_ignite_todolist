@@ -1,0 +1,76 @@
+/* Listagem */
+
+.tarefas .lista {
+  list-style: none;
+}
+
+.tarefas .lista .clipboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4rem 2rem;
+  border-top: solid 2px var(--gray-400);
+  line-height: 1.4rem;
+}
+
+.tarefas .lista .clipboard img { margin-bottom: 1rem;}
+
+.tarefas .notificacao {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.tarefas .notificacao p{
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.tarefas .notificacao p:nth-child(2){
+  color: var(--purple);
+}
+
+.tarefas .notificacao span {
+  background-color: var(--gray-400);
+  color: var(--white);
+  border-radius: 100px;
+  padding: 2px 8px;
+  font-weight: 700;
+  font-size: 0.75;
+}
+
+/* Items */
+.tarefas .item {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.tarefas .item {
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tarefas .item p {
+  color: var(--gray-100);
+  font-weight: 400;
+  margin: 0 0.75rem;
+}
+
+.tarefas .item s {
+  margin: 0 0.75rem;
+}
+
+.tarefas .item circle {
+  color: var(--blue);
+}
+
+.tarefas .item .checkCircle {
+  background-color: var(--purple);
+  color: var(--white);
+  border-radius: 50px;
+}
