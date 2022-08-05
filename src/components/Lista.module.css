@@ -7,7 +7,7 @@
 .tarefas .lista .clipboard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: 'center';
   align-items: center;
 
   padding: 4rem 2rem;
@@ -16,30 +16,6 @@
 }
 
 .tarefas .lista .clipboard img { margin-bottom: 1rem;}
-
-.tarefas .notificacao {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-}
-
-.tarefas .notificacao p{
-  color: var(--blue);
-  font-weight: 700;
-}
-
-.tarefas .notificacao p:nth-child(2){
-  color: var(--purple);
-}
-
-.tarefas .notificacao span {
-  background-color: var(--gray-400);
-  color: var(--white);
-  border-radius: 100px;
-  padding: 2px 8px;
-  font-weight: 700;
-  font-size: 0.75;
-}
 
 /* Items */
 .tarefas .item {

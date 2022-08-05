@@ -1,0 +1,23 @@
+.notificacao {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.notificacao p{
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.notificacao p:nth-child(2){
+  color: var(--purple);
+}
+
+.notificacao span {
+  background-color: var(--gray-400);
+  color: var(--white);
+  border-radius: 100px;
+  padding: 2px 8px;
+  font-weight: 700;
+  font-size: 0.75;
+}

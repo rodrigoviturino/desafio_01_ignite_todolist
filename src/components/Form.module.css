@@ -1,9 +1,13 @@
-.main .form {
-  margin-top: -1.6rem;
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: -24.6rem;
   margin-bottom: 4rem;
 }
 
-.main .form input{
+.form input{
   background-color: var(--gray-500);
   padding: 1rem;
   margin-right: 8px;
@@ -12,11 +16,20 @@
   border: none;
 }
 
-.main .form button {
+.form button {
   background-color: var(--blue-dark);
   color: var(--white);
   border-radius: 8px;
+  border: none;
   padding: 1rem;
   font-weight: 700;
   font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.form button svg {
+  display: block;
+  margin-left: 0.5rem;
 }
