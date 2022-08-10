@@ -7,17 +7,16 @@ import { Trash, Circle, CheckCircle, PlusCircle } from 'phosphor-react';
 import clipBoard from '../assets/clipboard.svg';
 import { Tarefas } from './Tarefas';
 
-interface ListaProps {
+interface Tasks {
+  id: number;
   content: string;
   status: boolean;
 }
 
-export const Lista = ( props: ListaProps ) => {
+export const Lista = () => {
 
   // Lista de Tarefas
-  const [ tasks, setTasks ] = React.useState([
-    'Comprar Ingresso São Paulo FC'
-  ]);
+  const [ tasks, setTasks ] = React.useState<Tasks[]>([]);
 
   // Guardando Valor do input no ESTADO
   const [newTask, setNewTask] = React.useState('');
@@ -26,7 +25,13 @@ export const Lista = ( props: ListaProps ) => {
   function handleCreateTask(event: FormEvent){
     event.preventDefault();
 
-    setTasks([...tasks, newTask]);
+    setTasks([...tasks,
+      {
+        id: new Date().getTime(),
+        content: newTask,
+        status: false
+      }
+    ]);
     setNewTask('');
   }
 
@@ -34,6 +39,14 @@ export const Lista = ( props: ListaProps ) => {
   function handleNewTaskChange(event){
     event.target.setCustomValidity('');
     setNewTask(event.target.value);
+  }
+
+  function deleteTask(id: number){
+    const deleteTask = tasks.filter((task) => {
+      return task.id !== id;
+    })
+
+    setTasks(deleteTask)    
   }
 
   return (
@@ -62,9 +75,11 @@ export const Lista = ( props: ListaProps ) => {
           tasks.map((task) => {
             return(
               <Tarefas
-                key={task}
-                content={task}
-                status={task}
+                key={task.id}
+                id={task.id}
+                content={task.content}
+                status={task.status}
+                onDeleteTask={deleteTask}
               />
             )
           })

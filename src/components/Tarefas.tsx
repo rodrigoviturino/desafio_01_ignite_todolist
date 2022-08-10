@@ -5,14 +5,20 @@ import styles from './Lista.module.css';
 import { Trash, Circle, CheckCircle } from 'phosphor-react';
 
 interface ListaProps {
+  id: number;
   content: string;
   status: boolean;
+  onDeleteTask: (task: string) => void;
 }
 
-export const Tarefas = ( props: ListaProps ) => {
+export const Tarefas = ({id, content, status, onDeleteTask}: ListaProps) => {
 
-  function handleFinished(event){
-    console.log(event.target)
+  // function handleFinished(event){
+  //   console.log(event.target)
+  // }
+
+  function handleDeleteTask(){
+    onDeleteTask(id);
   }
 
   return (
@@ -28,11 +34,10 @@ export const Tarefas = ( props: ListaProps ) => {
     {/* Lista com Item */}
       <li
         className={styles.item}
-        onClick={handleFinished}
       >
         <Circle size={20}/>
-        <p>{props.content}</p>
-        <span><Trash size={20} /></span>
+        <p>{content}</p>
+        <button onClick={handleDeleteTask}><Trash size={20} /></button>
       </li>
 
   
