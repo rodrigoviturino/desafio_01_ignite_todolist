@@ -1,0 +1,12 @@
+.clipboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: 'center';
+  align-items: center;
+
+  padding: 4rem 2rem;
+  border-top: solid 2px var(--gray-400);
+  line-height: 1.4rem;
+}
+
+.clipboard img { margin-bottom: 1rem;}

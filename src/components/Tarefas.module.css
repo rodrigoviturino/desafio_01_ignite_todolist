@@ -39,10 +39,23 @@
 
 /* Listagem */
 
-.tarefas .lista {
-  list-style: none;
+/* .tarefas .lista li{ 
+  background-color: #eee;
+  padding: 20px;
 }
 
+/* .tarefas .lista {
+  list-style: none;
+} */
+
+
+/* .tarefas .lista li {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+} */
+
+/*
 .tarefas .lista .clipboard {
   display: flex;
   flex-direction: column;
@@ -56,11 +69,11 @@
 
 .tarefas .lista .clipboard img { margin-bottom: 1rem;}
 
-/* Items */
+
 .tarefas .item {
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .tarefas .item {
@@ -76,16 +89,67 @@
   margin: 0 0.75rem;
 }
 
-.tarefas .item s {
+.tarefas .item s, .tarefas .lista s {
   margin: 0 0.75rem;
 }
 
-.tarefas .item circle {
+.tarefas .lista .checkCircle circle {
   color: var(--blue);
 }
 
-.tarefas .item .checkCircle {
+.tarefas .lista .checkCircle {
   background-color: var(--purple);
   color: var(--white);
   border-radius: 50px;
+}
+
+.tarefas .lista .item button {
+  background: none;
+  border: none;
+}
+*/
+
+button {
+  cursor: pointer;
+}
+
+.item .checkedIcon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  border: none;
+  color: var(--blue);
+  padding:0;
+  margin: 0;
+}
+
+
+.checkCircle .checkedIcon{
+  border: none;
+  background-color: var(--purple);
+  border-radius: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.trash {
+  border: none;
+}
+
+.checkCircle button svg > polyline{
+  color: var(--white);
+}
+
+.checkCircle button svg > circle {
+  color: transparent;
+}
+
+/* Excluir */
+
+.trash {
+  background-color: transparent;
+  color: var(--gray-300);
 }

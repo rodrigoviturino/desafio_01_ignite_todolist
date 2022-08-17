@@ -1,17 +1,20 @@
 import React, {ChangeEvent, FormEvent } from 'react';
 
-import styles from './Lista.module.css';
-
 import { Trash, Circle, CheckCircle } from 'phosphor-react';
+
+import clipBoard from '../assets/clipboard.svg';
+
+import styles from './Tarefas.module.css';
 
 interface ListaProps {
   id: number;
   content: string;
   status: boolean;
-  onDeleteTask: (task: string) => void;
+  onDeleteTask: (task: number) => void;
+  onDoneTask: (id: number) => void;
 }
 
-export const Tarefas = ({id, content, status, onDeleteTask}: ListaProps) => {
+export const Tarefas = ({id, content, status, onDeleteTask, onDoneTask}: ListaProps) => {
 
   // function handleFinished(event){
   //   console.log(event.target)
@@ -19,6 +22,10 @@ export const Tarefas = ({id, content, status, onDeleteTask}: ListaProps) => {
 
   function handleDeleteTask(){
     onDeleteTask(id);
+  }
+
+  function handleDoneTask(){
+    onDoneTask(id);
   }
 
   return (
@@ -31,15 +38,18 @@ export const Tarefas = ({id, content, status, onDeleteTask}: ListaProps) => {
         <p>Crie tarefas e organize seus itens a fazer</p>
       </li> */}
 
-    {/* Lista com Item */}
-      <li
-        className={styles.item}
-      >
-        <Circle size={20}/>
-        <p>{content}</p>
-        <button onClick={handleDeleteTask}><Trash size={20} /></button>
-      </li>
+    {/* Lista com Item */}        
 
+          <li
+          className={status ? styles.checkCircle : styles.item}
+          >
+            <button onClick={handleDoneTask} className={styles.checkedIcon}>
+              { status ? <CheckCircle className={styles.checked} size={25}/> : <Circle size={25} />}
+            </button>
+            { status ? <s>{content}</s> : <p>{content}</p> }
+            <button onClick={handleDeleteTask} className={styles.trash}><Trash size={25} /></button>
+          </li>
+      
   
       {/* <li className={styles.item}>
         <CheckCircle size={20} className={styles.checkCircle} />

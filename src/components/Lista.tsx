@@ -1,11 +1,14 @@
 import React, {ChangeEvent, FormEvent } from 'react';
 
-import styles from './Lista.module.css';
 
 import { Trash, Circle, CheckCircle, PlusCircle } from 'phosphor-react';
 
 import clipBoard from '../assets/clipboard.svg';
 import { Tarefas } from './Tarefas';
+
+import styles from './Lista.module.css';
+import styles1 from './Notificacao.module.css';
+import { TarefaVazia } from './TarefaVazia';
 
 interface Tasks {
   id: number;
@@ -43,10 +46,19 @@ export const Lista = () => {
 
   function deleteTask(id: number){
     const deleteTask = tasks.filter((task) => {
-      return task.id !== id;
+       return task.id !== id;
     })
 
     setTasks(deleteTask)    
+  }
+
+  function handleDoneTask(id: number){
+    const taskIndex = tasks.findIndex(task => task.id === id);
+    let newTaskArray = [...tasks];
+    
+    newTaskArray[taskIndex].status = !newTaskArray[taskIndex].status;
+
+    setTasks(newTaskArray);    
   }
 
   return (
@@ -70,21 +82,38 @@ export const Lista = () => {
     {/* Lista de Tarefas */}
     <div className={styles.tarefas}>
 
+      <div className={styles1.notificacao}>
+        <p>Tarefa Criadas <span>{tasks.length}</span></p>
+        <p>Concluídas <span>
+          {
+            tasks.forEach(item => {
+              return(item.status)
+            })
+          } de {tasks.length}</span></p>       
+      </div>
+
+
       <ul className={styles.lista}>
         {
           tasks.map((task) => {
             return(
-              <Tarefas
-                key={task.id}
-                id={task.id}
-                content={task.content}
-                status={task.status}
-                onDeleteTask={deleteTask}
-              />
-            )
+                <Tarefas
+                  key={task.id}
+                  id={task.id}
+                  content={task.content}
+                  status={task.status}
+                  onDeleteTask={deleteTask}
+                  onDoneTask={handleDoneTask}
+                />
+              )
           })
+        
         }
       </ul>
+        {
+          tasks.length === 0 &&
+            <TarefaVazia />
+        }
 
     </div>
     {/* end Lista de Tarefas */}

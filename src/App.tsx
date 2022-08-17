@@ -11,19 +11,6 @@ import { Notificacao } from './components/Notificacao';
 
 export function App(){
 
-  // const tarefas = [
-  //   {
-  //     id: 1,
-  //     content: 'Comprar Smartphone',
-  //     status: true
-  //   },
-  //   {
-  //     id: 2,
-  //     content: 'Fazer Caminhada',
-  //     status: false
-  //   }
-  // ];
-
   return(
     <div>
       <Header />
@@ -31,19 +18,7 @@ export function App(){
       <main className={styles.main}>
         <div className={styles.wrapper}>
 
-          {/* {
-            tarefas.map((item) => {
-              return(
-                <Lista
-                  key={item.id}
-                  content={item.content}
-                  status={item.status}
-                />
-                )
-              })
-          } */}
           <Lista />
-
 
         </div>
       </main>

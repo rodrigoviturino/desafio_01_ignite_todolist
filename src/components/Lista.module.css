@@ -57,35 +57,42 @@
 .tarefas .lista .clipboard img { margin-bottom: 1rem;}
 
 /* Items */
-.tarefas .item {
+.tarefas .lista li {
   display: flex;
   justify-content: center;
   align-items: center
 }
 
-.tarefas .item {
+.tarefas .lista li {
   background-color: var(--gray-500);
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 0.75rem;
 }
 
-.tarefas .item p {
+.tarefas .lista li p {
   color: var(--gray-100);
   font-weight: 400;
   margin: 0 0.75rem;
 }
 
-.tarefas .item s {
+.tarefas .lista li s {
   margin: 0 0.75rem;
 }
 
-.tarefas .item circle {
+/* .tarefas .lista li circle {
   color: var(--blue);
-}
+} */
 
-.tarefas .item .checkCircle {
-  background-color: var(--purple);
+/* .tarefas .lista li button polyline{
   color: var(--white);
-  border-radius: 50px;
-}
+} */
+
+/* .tarefas .lista li button {
+  border: none;
+  background: none;
+} */
+
+/* .tarefas .lista li button {
+  background-color: var(--purple) !important;
+} */
