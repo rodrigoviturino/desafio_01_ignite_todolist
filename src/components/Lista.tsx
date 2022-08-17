@@ -61,6 +61,10 @@ export const Lista = () => {
     setTasks(newTaskArray);    
   }
 
+  const tasksCompleta = tasks.filter(task => {
+    return task.status !== false
+  })
+
   return (
   <section>
 
@@ -84,12 +88,7 @@ export const Lista = () => {
 
       <div className={styles1.notificacao}>
         <p>Tarefa Criadas <span>{tasks.length}</span></p>
-        <p>Concluídas <span>
-          {
-            tasks.forEach(item => {
-              return(item.status)
-            })
-          } de {tasks.length}</span></p>       
+        <p>Concluídas <span> { tasksCompleta.length } de {tasks.length} </span> </p>
       </div>
 
 
